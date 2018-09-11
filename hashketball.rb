@@ -192,9 +192,14 @@ def big_shoe_rebounds
   end
   team_data = team_data.flatten
 
-    team_data.map do |i|
-      puts k
+  shoe_size = 0
+  return_value = '';
+
+    team_data.each do |i|
+      if i[:shoe] >  shoe_size 
+      shoe_size = i[:shoe]
+      return_value = i[:rebounds]
+      end
     end
-  team_data
-end      
-big_shoe_rebounds
+return_value
+end   
